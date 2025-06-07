@@ -7,12 +7,25 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <script>
+    if (!localStorage.getItem('currentUser')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+
   <div class="container">
     <nav class="navbar">
       <button onclick="location.href='index.html'">Landing</button>
       <button onclick="location.href='blog.html'">Blog</button>
       <button onclick="location.href='donation.html'">Donate</button>
     </nav>
+
+    <div style="text-align: right; margin-bottom: 1rem;">
+      Logged in as <strong id="user-name"></strong>
+      <button id="logout-btn" style="margin-left:1rem;">Logout</button>
+    </div>
 
     <h1>Profile Page</h1>
     <h3>View your past transactions here:</h3>
