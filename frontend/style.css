@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-  --bg: #e8faff;           /* light sky-blue background */
+  --bg: #f0fdf4;           /* updated pastel mint background */
   --surface: #ffffff;      /* white card */
   --primary: #1e3a8a;      /* dark blue text / labels */
   --accent: #3b82f6;       /* blue button */
@@ -30,12 +30,16 @@ body {
 }
 
 .container {
-  background-color: var(--surface);
+  background: var(--surface);
+  width: 99%;
+  max-width: 1400px;
+  height: 90vh;
+  margin: 0 auto;
   padding: 2rem;
   border-radius: 1rem;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  position: relative;
+  overflow-y: auto;
 }
 
 h1 {
@@ -118,4 +122,241 @@ button:hover {
 
 .error {
   color: var(--error);
+}
+
+/* === Landing Page Layout === */
+.landing-layout {
+  display: flex;
+}
+
+/* Left-side tab navigation */
+.cause-nav {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.cause-tab {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--surface);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cause-tab:hover {
+  background: var(--primary);
+}
+.cause-tab.active {
+  background: var(--primary);
+}
+
+/* Grid of cause cards */
+.cause-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.cause-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: var(--surface);
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  color: var(--text);
+  transition: transform 0.2s;
+  height: 200px; /* enforce 80/20 layout */
+}
+.cause-card:hover {
+  transform: translateY(-4px);
+}
+
+.cause-card img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cause-title {
+  height: 30%;
+  padding: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile button */
+.profile-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+.profile-btn:hover {
+  background: var(--primary);
+}
+
+/* Charity registration button */
+.charity-btn {
+  position: absolute;
+  top: 1rem;
+  right: 5.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--success);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+.charity-btn:hover {
+  background-color: #059669;
+}
+
+/* Contact Us footer */
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--surface);
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+}
+
+/* Blog container */
+.blog-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Title */
+.blog-post .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Main image under title */
+.blog-post .main-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Discord link */
+.blog-post .discord-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.blog-post .discord-link:hover {
+  text-decoration: underline;
+}
+
+/* Short description paragraph */
+.blog-post .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+/* Projects section wrapper */
+.blog-post .projects {
+  margin-top: 2rem;
+}
+
+/* Section heading */
+.blog-post .projects > h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Individual project card */
+.blog-post .project {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* Project title */
+.blog-post .project h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Project image */
+.blog-post .project img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Project description */
+.blog-post .project p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Donate Button – updated to yellow */
+.donate-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #facc15; /* pastel yellow */
+  color: var(--text);
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  z-index: 1000;
+}
+.donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background-color: #eab308; /* darker yellow */
 }

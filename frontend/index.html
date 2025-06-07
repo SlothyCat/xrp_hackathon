@@ -3,19 +3,67 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Landing</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
-    <nav class="navbar">
-      <button class="nav-btn" onclick="location.href='blog.html'">Blog</button>
-      <button class="nav-btn" onclick="location.href='donation.html'">Donate</button>
-      <button class="nav-btn" onclick="location.href='profile.html'">Profile</button>
-    </nav>
+    <!-- Top-right controls -->
+    <div class="top-right">
+      <button class="charity-btn" onclick="location.href='charity-signup.html'">
+        I am a Charity
+      </button>
+      <img
+        src="../images/profile_icon.png"
+        onclick="location.href='profile.html'"
+        class="profile-btn"
+        alt="Profile"
+      />
+    </div>
 
-    <h1>Landing Page</h1>
-    <p>Welcome! Choose a cause tab above to explore.</p>
+    <h1>Donate to your Chosen Cause</h1>
+
+    <div class="landing-layout">
+      <!-- Left-side cause tabs -->
+      <aside class="cause-nav">
+        <button class="cause-tab active">Gaza</button>
+        <button class="cause-tab">Education</button>
+        <button class="cause-tab">Water</button>
+        <button class="cause-tab">Healthcare</button>
+        <button class="cause-tab">Environment</button>
+        <button class="cause-tab">Hunger</button>
+        <button class="cause-tab">Poverty</button>
+        <button class="cause-tab">Animal Welfare</button>
+        <button class="cause-tab">Disaster Relief</button>
+        <button class="cause-tab">Mental Health</button>
+        <button class="cause-tab">Women’s Rights</button>
+      </aside>
+
+      <!-- Main grid of cause cards -->
+      <section class="cause-grid">
+        <a href="blog.html" class="cause-card">
+          <img src="../images/un_crisis_relief.avif" alt="UN Crisis Relief"/>
+          <div class="cause-title">UN Crisis Relief</div>
+        </a>
+        <a href="blog.html" class="cause-card">
+          <img src="../images/unfpa.svg" alt="UNFPA"/>
+          <div class="cause-title">United Nations Population Fund (UNFPA)</div>
+        </a>
+        <a href="blog.html" class="cause-card">
+          <img src="../images/icrc.avif" alt="ICRC"/>
+          <div class="cause-title">International Committee of the Red Cross (ICRC)</div>
+        </a>
+        <a href="blog.html" class="cause-card">
+          <img src="../images/Save-The-Children-Logo.jpg" alt="Save the Children"/>
+          <div class="cause-title">Save the Children</div>
+        </a>
+      </section>
+    </div>
+
+    <!-- Contact Us footer -->
+    <footer class="contact-footer">
+      <p>Contact us: <a href="mailto:info@example.com">info@example.com</a></p>
+    </footer>
   </div>
 </body>
 </html>
