@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UN Crisis Relief Blog</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-        <button onclick="location.href='index.html'">Landing</button>
-        <button onclick="location.href='donation.html'">Donate</button>
-        <button onclick="location.href='profile.html'">Profile</button>
-      </nav>
+  <article class="blog-post">
+    <!-- Title -->
+    <h1 class="title">UN Crisis Relief</h1>
+    
+    <!-- Main Image -->
+    <img src="https://betterworldcampaign.org/wp-content/uploads/2025/03/image001.jpg" 
+         alt="OCHA on the front lines" 
+         class="main-image">
+    
+    <!-- Fake Discord Link -->
+    <p><a href="https://discord.gg/fake-link" class="discord-link">Join our Discord community</a></p>
+    
+    <!-- Short Description -->
+    <p class="description">
+      The UN Office for the Coordination of Humanitarian Affairs (OCHA) coordinates life-saving aid 
+      across global emergencies, leveraging anticipatory action, rapid funding pools, and local 
+      partnerships to reach the most vulnerable. 
+    </p>
+    
+    <!-- Latest Actions and Projects -->
+    <section class="projects">
+      <h2>Latest Actions and Projects</h2>
+      
+      <!-- Project 1 -->
+      <div class="project">
+        <h3>Anticipatory Action</h3>
+        <img src="https://www.frontiersin.org/files/Articles/932336/fclim-04-932336-HTML/image_m/fclim-04-932336-g001.jpg" 
+             alt="OCHA-facilitated anticipatory action portfolio">
+        <p>
+          OCHA’s Anticipatory Action framework uses reliable forecasts and pre-arranged finance 
+          to trigger early interventions—such as pre-positioning food, cash transfers, and shelter 
+          supplies—before disasters strike, reaching millions in countries like Bangladesh, Chad, 
+          and the Philippines :contentReference[oaicite:6]{index=6}.
+        </p>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project">
+        <h3>Cash-for-Work Initiative for Rohingya Refugees</h3>
+        <img src="https://www.wvi.org/sites/default/files/styles/medium_landscape/public/CFW%20%288%29.JPG?itok=YFgGTrDp" 
+             alt="Rohingya refugees in cash-for-work program">
+        <p>
+          In Cox’s Bazar, nearly 5,000 Rohingya refugees have been engaged in cash-for-work activities— 
+          from clearing drainage channels to building bamboo bridges—earning daily wages that restore 
+          dignity and provide crucial household income :contentReference[oaicite:7]{index=7}.
+        </p>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project">
+        <h3>Flexible Funds 2025 – Gaza Response</h3>
+        <img src="https://www.reuters.com/resizer/v2/6T6H6Z6NTJKVZFLVSAPCCKZNVY.jpg?auth=16896cf075cd98d288146dc990361df698146a68377cae8d8bd44afb5ed6589b&quality=80&width=2615" 
+             alt="Aid trucks at UN storage facility in Gaza">
+        <p>
+          The UN’s Flexible Funds mechanism, including the Central Emergency Response Fund (CERF), 
+          swiftly allocates unearmarked financing to partners in Gaza, enabling the entry and distribution 
+          of an average of 50 truckloads of aid per day amid shifting operational constraints :contentReference[oaicite:8]{index=8}.
+        </p>
+      </div>
+    </section>
+  </article>
 
-    <h1>Blog Page</h1>
-    <p>Here you’ll see posts about each cause (Gaza, Education, Water, etc.).</p>
-  </div>
+  <button class="donate-btn" onclick="location.href='donation.html'">
+    Donate
+  </button>  
 </body>
 </html>
