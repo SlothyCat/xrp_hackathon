@@ -1,3 +1,5 @@
+const currentUser = localStorage.getItem('currentUser');
+
 const donations = [
     { date: '2025-06-05', charity: 'Clean Water',         xrp: 5,  fiatAmt: 6.1,  fiatCurr: 'EUR' },
     { date: '2025-06-07', charity: 'Education for All',    xrp: 10, fiatAmt: 12.0, fiatCurr: 'SGD' },
@@ -70,6 +72,14 @@ const donations = [
   }
   
   window.addEventListener('DOMContentLoaded', () => {
+    // Auth bar
+    document.getElementById('user-name').textContent = currentUser;
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('currentUser');
+      window.location.href = 'login.html';
+    });
+  
+    // Month navigation
     document.getElementById('prev-month').addEventListener('click', () => {
       current.setMonth(current.getMonth() - 1);
       renderCalendar();
@@ -78,7 +88,7 @@ const donations = [
       current.setMonth(current.getMonth() + 1);
       renderCalendar();
     });
-  
+    
     renderCalendar();
     renderDonations();  
   });

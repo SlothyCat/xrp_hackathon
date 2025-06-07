@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register – XRP Charity Pool</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Register</h1>
+    <form id="register-form">
+      <div class="input-group">
+        <input type="text" id="username" placeholder=" " required />
+        <label for="username">Username</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder=" " required />
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+    <p style="margin-top:1rem;">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      let users = JSON.parse(localStorage.getItem('users') || '[]');
+      if (users.find(x => x.username === u)) {
+        return alert('Username taken – pick another.');
+      }
+      users.push({ username: u, password: p });
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Registered! Now please log in.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
