@@ -1,50 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>XRP Payment App</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <h1>Send XRP on Testnet</h1>
+  <div class="container">
+    <nav class="navbar">
+      <button class="nav-btn" onclick="location.href='blog.html'">Blog</button>
+      <button class="nav-btn" onclick="location.href='donation.html'">Donate</button>
+      <button class="nav-btn" onclick="location.href='profile.html'">Profile</button>
+    </nav>
 
-  <label>Wallet Seed:</label><br>
-  <input id="seed" type="text" placeholder="s██████████"><br><br>
-
-  <label>Recipient Address:</label><br>
-  <input id="destination" type="text" placeholder="r██████████"><br><br>
-
-  <label>Amount (in XRP):</label><br>
-  <input id="amount" type="number" step="0.000001"><br><br>
-
-  <button onclick="send()">💸 Send Payment</button>
-
-  <div id="result" style="margin-top: 20px;"></div>
-
-  <script>
-    async function send() {
-      const seed = document.getElementById("seed").value;
-      const destination = document.getElementById("destination").value;
-      const amount = document.getElementById("amount").value;
-
-      const response = await fetch("http://localhost:3000/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ seed, destination, amount }),
-      });
-
-      const data = await response.json();
-      const resultDiv = document.getElementById("result");
-
-      if (data.success) {
-        resultDiv.innerHTML = `
-          ✅ Payment successful!<br>
-          <strong>TX Hash:</strong> ${data.txHash}<br>
-          <a href="${data.explorer}" target="_blank">🔗 View on Explorer</a>
-        `;
-      } else {
-        resultDiv.innerHTML = `❌ Error: ${data.error}`;
-      }
-    }
-  </script>
+    <h1>Landing Page</h1>
+    <p>Welcome! Choose a cause tab above to explore.</p>
+  </div>
 </body>
 </html>

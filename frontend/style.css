@@ -1,0 +1,121 @@
+/* Import a clean sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #e8faff;           /* light sky-blue background */
+  --surface: #ffffff;      /* white card */
+  --primary: #1e3a8a;      /* dark blue text / labels */
+  --accent: #3b82f6;       /* blue button */
+  --text: #1f2937;         /* dark gray text */
+  --muted: #64748b;        /* muted gray labels */
+  --success: #10b981;      /* green success */
+  --error: #ef4444;        /* red error */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: var(--primary);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  border: 1px solid var(--muted);
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem 0.25rem;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text);
+}
+
+.input-group label {
+  position: absolute;
+  top: 1rem;
+  left: 0.75rem;
+  font-size: 1rem;
+  color: var(--muted);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Float label on focus or when input has content */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.6rem;
+  background-color: var(--surface);
+  padding: 0 0.25rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  padding: 1rem;
+  background-color: var(--accent);
+  color: var(--surface);
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary);
+}
+
+#result {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: var(--success);
+}
+
+.error {
+  color: var(--error);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XRP Exchange Donation</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Send XRP</h1>
+    <form id="payment-form" onsubmit="event.preventDefault(); sendPayment();">
+      <div class="input-group">
+        <input id="seed" type="text" placeholder=" " required />
+        <label for="seed">Wallet Seed</label>
+      </div>
+      <div class="input-group">
+        <input id="destination" type="text" placeholder=" " required />
+        <label for="destination">Recipient Address</label>
+      </div>
+      <div class="input-group">
+        <input id="amount" type="number" step="0.000001" placeholder=" " required />
+        <label for="amount">Amount (XRP)</label>
+      </div>
+      <button type="submit">💸 Send Payment</button>
+      <div id="result"></div>
+    </form>
+  </div>
+
+  <script>
+    async function sendPayment() {
+      const seed = document.getElementById('seed').value;
+      const destination = document.getElementById('destination').value;
+      const amount = document.getElementById('amount').value;
+      const response = await fetch('http://localhost:3000/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ seed, destination, amount })
+      });
+      const data = await response.json();
+      const resultDiv = document.getElementById('result');
+      if (data.success) {
+        resultDiv.innerHTML = `
+          <p class="success">✅ Payment successful!</p>
+          <p><strong>TX Hash:</strong> ${data.txHash}</p>
+          <p><a href="${data.explorer}" target="_blank">🔗 View on Explorer</a></p>
+        `;
+      } else {
+        resultDiv.innerHTML = `<p class="error">❌ Error: ${data.error}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
