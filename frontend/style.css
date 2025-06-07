@@ -359,4 +359,117 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   background-color: #eab308; /* darker yellow */
+=======
+/* Profile page calendar*/
+.profile-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;  
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.calendar-container {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  /* fixed width: */
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+/* Month header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--primary);
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-header span {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* Weekday labels */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 0.25rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.calendar-weekdays div {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
+  justify-items: center; 
+}
+
+/* Individual day */
+.calendar-day {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+.calendar-day:hover {
+  background: var(--surface);
+}
+.calendar-day.selected {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Donation list */
+.donation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Donation Card */
+.donation-item {
+  background: #f9fafe;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.donation-item .xrp {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.donation-item .charity {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.donation-item .fiat {
+  margin-top: 0.25rem;
+  color: var(--muted);
 }

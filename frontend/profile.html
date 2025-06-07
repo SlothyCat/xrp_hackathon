@@ -3,19 +3,52 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile</title>
+  <title>Profile – XRP Charity Pool</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
+  <script>
+    if (!localStorage.getItem('currentUser')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+
   <div class="container">
     <nav class="navbar">
-        <button onclick="location.href='index.html'">Landing</button>
-        <button onclick="location.href='blog.html'">Blog</button>
-        <button onclick="location.href='donation.html'">Donate</button>
+      <button onclick="location.href='index.html'">Landing</button>
+      <button onclick="location.href='blog.html'">Blog</button>
+      <button onclick="location.href='donation.html'">Donate</button>
     </nav>
 
+    <div style="text-align: right; margin-bottom: 1rem;">
+      Logged in as <strong id="user-name"></strong>
+      <button id="logout-btn" style="margin-left:1rem;">Logout</button>
+    </div>
+
     <h1>Profile Page</h1>
-    <p>Your recent donations will show up here.</p>
+    <h3>View your past transactions here:</h3>
+    <div class="profile-grid">
+      <div class="calendar-section">
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <span id="calendar-month-year"></span>
+            <button id="next-month">&gt;</button>
+          </div>
+          <div class="calendar-weekdays">
+            <div>Sun</div><div>Mon</div><div>Tue</div>
+            <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+          </div>
+          <div id="calendar" class="calendar-grid"></div>
+        </div>
+      </div>
+
+      <div id="donation-list" class="donation-list"></div>
+    </div>
   </div>
+
+  <script src="profile.js"></script>
 </body>
 </html>
