@@ -55,3 +55,21 @@ Transparency is spotlight's number 1 priority as a trustworthy and reliable fund
 4. **External API:**  
    - XRPL Testnet via JSON-RPC (`https://s.altnet.rippletest.net:51234`)  
 
+---
+
+## Screenshots
+
+## Screenshots
+
+### Landing Page
+![Home Page](images/homePage.jpg)
+
+### Blog Page
+![Blog Page](images/descriptionPage.jpg)
+
+### Donation Page
+![Donation Page](images/donationPage.jpg)
+
+### Profile Page
+![Donation Log](images/donationLogPage.jpg)
+
