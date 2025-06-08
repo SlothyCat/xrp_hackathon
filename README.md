@@ -73,3 +73,7 @@ Transparency is spotlight's number 1 priority as a trustworthy and reliable fund
 ### Profile Page
 ![Donation Log](images/donationLogPage.jpg)
 
+---
+
+## Screen Recording
+https://drive.google.com/drive/folders/1NcHAt6N5RUIzRZKxm_b30VN1ly0wcqzL?usp=share_link
