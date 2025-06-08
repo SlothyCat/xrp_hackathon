@@ -31,7 +31,7 @@
       const users = JSON.parse(localStorage.getItem('users') || '[]');
       if (users.find(x => x.username === u && x.password === p)) {
         localStorage.setItem('currentUser', u);
-        window.location.href = 'profile.html';
+        window.location.href = 'index.html';
       } else {
         alert('Invalid credentials');
       }
