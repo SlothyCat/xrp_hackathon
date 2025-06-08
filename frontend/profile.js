@@ -12,6 +12,15 @@ const donations = [
   let selectedDate = '';         
   
   function pad(n) { return n < 10 ? '0'+n : n; }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('default', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  }  
   
   function renderDonations(filterDate = '') {
     const list = document.getElementById('donation-list');
@@ -25,6 +34,7 @@ const donations = [
       const card = document.createElement('div');
       card.className = 'donation-item';
       card.innerHTML = `
+        <div class="date">${formatDate(d.date)}</div>
         <div class="xrp">${d.xrp} XRP donated</div>
         <div class="charity">${d.charity}</div>
         <div class="fiat">(${d.fiatAmt.toFixed(2)} ${d.fiatCurr})</div>
@@ -72,14 +82,14 @@ const donations = [
   }
   
   window.addEventListener('DOMContentLoaded', () => {
-    // Auth bar
+    // --- AUTH BAR ---
     document.getElementById('user-name').textContent = currentUser;
     document.getElementById('logout-btn').addEventListener('click', () => {
       localStorage.removeItem('currentUser');
       window.location.href = 'login.html';
     });
   
-    // Month navigation
+    // --- MONTH NAVIGATION ---
     document.getElementById('prev-month').addEventListener('click', () => {
       current.setMonth(current.getMonth() - 1);
       renderCalendar();
@@ -88,7 +98,7 @@ const donations = [
       current.setMonth(current.getMonth() + 1);
       renderCalendar();
     });
-    
+        
     renderCalendar();
     renderDonations();  
   });
