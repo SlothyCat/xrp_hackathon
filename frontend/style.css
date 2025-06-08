@@ -475,3 +475,9 @@ footer {
   color: var(--muted);
 }
 
+.donation-item .date {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+  font-style: italic;
+}
