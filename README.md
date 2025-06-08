@@ -40,6 +40,18 @@ Spotlight has a tracking feature that allows users to track exactly where every 
 
 Transparency is spotlight's number 1 priority as a trustworthy and reliable fundraising platform for small charities.
 
-## Installation
+---
 
-##
+
+## Tech Stack
+1. **Version Control:** Git & GitHub  
+2. **Frontend:**  
+   - Markup & Styles: HTML, CSS  
+   - Interactivity: JavaScript (Fetch API)  
+3. **Backend:**  
+   - Framework: Python + Flask  
+   - CORS support: Flask-CORS  
+   - XRP integration: xrpl-py  
+4. **External API:**  
+   - XRPL Testnet via JSON-RPC (`https://s.altnet.rippletest.net:51234`)  
+
