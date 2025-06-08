@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <script>
+        if (!localStorage.getItem('currentUser')) {
+          window.location.href = 'login.html';
+        }
+      </script>    
   <div class="container">
     <h1>Send XRP</h1>
     <form id="payment-form" onsubmit="event.preventDefault(); sendPayment();">
