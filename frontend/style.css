@@ -481,3 +481,61 @@ footer {
   margin-bottom: 0.25rem;
   font-style: italic;
 }
+
+/* ─── Dropdown‐group wrapper ─── */
+.dropdown-group {
+  margin-bottom: 1.5rem;         /* same vertical spacing as .input-group */
+}
+.dropdown-group > label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ─── Dropdown base & z-index ─── */
+.dropdown {
+  position: relative;
+  z-index: 1;
+}
+.dropdown-selected {
+  border: 1px solid var(--muted);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  background: transparent;
+  z-index: 2;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--muted);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 5;
+}
+
+/* ─── Menu items ─── */
+.dropdown-menu li {
+  list-style: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.dropdown-menu li:hover {
+  background: var(--bg);
+}
+.dropdown-menu .name {
+  display: block;
+  font-weight: 600;
+}
+.dropdown-menu .address {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
