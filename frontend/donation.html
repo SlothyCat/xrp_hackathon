@@ -15,24 +15,74 @@
   <div class="container">
     <h1>Send XRP</h1>
     <form id="payment-form" onsubmit="event.preventDefault(); sendPayment();">
+
       <div class="input-group">
         <input id="seed" type="text" placeholder=" " required />
         <label for="seed">Wallet Seed</label>
       </div>
-      <div class="input-group">
-        <input id="destination" type="text" placeholder=" " required />
-        <label for="destination">Recipient Address</label>
+
+      <div class="dropdown-group">
+        <label for="charity-dropdown">Choose Charity</label>
+        <div class="dropdown" id="charity-dropdown">
+          <div class="dropdown-selected">Select a Charity</div>
+          <ul class="dropdown-menu"></ul>
+        </div>
+        <!-- hidden input -->
+        <input id="destination" type="hidden" required />
       </div>
+
       <div class="input-group">
         <input id="amount" type="number" step="0.000001" placeholder=" " required />
         <label for="amount">Amount (XRP)</label>
       </div>
+
       <button type="submit">💸 Send Payment</button>
       <div id="result"></div>
     </form>
   </div>
 
   <script>
+      const charities = [
+    { name: 'Gaza Latest Charity',  address: 'rEXAMPLExxxxxxxxxxxxxxxxxxxxx1' },
+    { name: 'Education for All',    address: 'rEXAMPLExxxxxxxxxxxxxxxxxxxxx2' },
+    { name: 'Clean Water',          address: 'rEXAMPLExxxxxxxxxxxxxxxxxxxxx3' },
+    { name: 'Healthcare Access',    address: 'rEXAMPLExxxxxxxxxxxxxxxxxxxxx4' },
+  ];
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.querySelector('.dropdown');
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const destInput = document.getElementById('destination');
+
+    // populate menu
+    charities.forEach(c => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="name">${c.name}</span>
+        <span class="address">${c.address}</span>
+      `;
+      li.addEventListener('click', () => {
+        selected.innerHTML = li.innerHTML;
+        destInput.value = c.address;
+        menu.style.display = 'none';
+      });
+      menu.appendChild(li);
+    });
+
+    // toggle open/close
+    selected.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // close if clicking outside
+    document.addEventListener('click', e => {
+      if (!dropdown.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  });
+
     async function sendPayment() {
       const seed = document.getElementById('seed').value;
       const destination = document.getElementById('destination').value;
