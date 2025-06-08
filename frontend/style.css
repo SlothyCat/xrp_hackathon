@@ -359,7 +359,8 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   background-color: #eab308; /* darker yellow */
-=======
+}
+
 /* Profile page calendar*/
 .profile-grid {
   display: grid;
@@ -473,3 +474,4 @@ footer {
   margin-top: 0.25rem;
   color: var(--muted);
 }
+
