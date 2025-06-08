@@ -7,11 +7,22 @@ const donations = [
     { date: '2025-06-08', charity: 'Healthcare Access',    xrp: 50, fiatAmt: 54.5, fiatCurr: 'USD' },
   ];
   
+
+  
 // Calendar functionality
   let current = new Date();      
   let selectedDate = '';         
   
   function pad(n) { return n < 10 ? '0'+n : n; }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('default', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
+    }   
   
   function renderDonations(filterDate = '') {
     const list = document.getElementById('donation-list');
@@ -25,6 +36,7 @@ const donations = [
       const card = document.createElement('div');
       card.className = 'donation-item';
       card.innerHTML = `
+        <div class="date">${formatDate(d.date)}</div>
         <div class="xrp">${d.xrp} XRP donated</div>
         <div class="charity">${d.charity}</div>
         <div class="fiat">(${d.fiatAmt.toFixed(2)} ${d.fiatCurr})</div>
